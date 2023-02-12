@@ -39,8 +39,8 @@
             </span> developer
           </h1>
           <div class="btns">
-            <a href="#" class="btn_login">Log In</a>
-            <a href="#" class="btn__signup">Sign Up</a>
+            <a href="./regester/LogIn/login.html" class="btn_login" target="_blank">Log In</a>
+            <a href="./regester/SignUp/signup.html" class="btn__signup" target="_blank">Sign Up</a>
           </div>
           <a href="#about">
             <img src="./icons/line_white.png" class="line" />
@@ -272,54 +272,25 @@
     </footer>
     <!-- Footer section end -->
 
-    <!-- Sign up and log in start -->
-    <div class="modal none_d">
-      <!-- Sign up -->
-      <div class="sign_up flex_d">
-        <div class="close_modal_sign_up">
-          <img src="./icons/close_balck.png" alt="close btn modal sign up" />
+    <!-- Notfication start -->
+    <div class="notfication">
+      <div class="success nftHide">
+        <img src="./icons/correct.png" alt="correct icon" class="correct">
+        <div class="danger_title">
+          <h3>success!</h3>
+          <p>You did it all right!</p>
         </div>
-        <form class="regester">
-          <input type="text" placeholder="Enter your name" id="name" />
-          <input type="text" placeholder="Enter your phone" id="phone" />
-          <input type="text" placeholder="Enter your email" id="email" />
-          <input type="password" placeholder="Enter your password" id="password" />
-
-          <a href="#" class="sign_in_google"
-            ><img src="./icons/google-symbol.png" alt="google-symbol" /> sign in
-            with google</a
-          >
-
-          <div class="log_in-btn">
-            <span class="log_in_submit">Log In</span>
-          </div>
-
-          <button class="submit_sign" type="button">Sign Up</button>
-        </form>
+        <img src="./icons/close.png" alt="close icon" class="close_notfication">
       </div>
-      <!-- Log in -->
-      <div class="log_in flex_d">
-        <div class="close_modal_log_in">
-          <img src="./icons/close_balck.png" alt="close btn modal sign up" />
+      <div class="error nftHide">
+        <img src="./icons/cancel.png" alt="cancel icon" class="cancel">
+        <div class="danger_title">
+          <h3>error!</h3>
+          <p>Something went wrong, please try again!</p>
         </div>
-        <form class="regester">
-          <input type="text" placeholder="Enter your email" id="email_log_in" />
-          <input type="password" placeholder="Enter your password" id="password_log_in" />
-
-          <a href="#" class="sign_in_google"
-            ><img src="./icons/google-symbol.png" alt="google-symbol" /> sign in
-            with google</a
-          >
-
-          <div class="sign_up-btn">
-            <span class="sign_up_submit">Sign Up</span>
-          </div>
-
-          <button class="submit_log" type="button">Log In</button>
-        </form>
+        <img src="./icons/close.png" alt="close icon" class="close_notfication">
       </div>
-    </div>
-    <!-- Sign up and Log in end -->
+    <!-- Notfication end -->
 
     <!-- JavaScript Link -->
     <script src="./js/script.js"></script>

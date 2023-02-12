@@ -291,142 +291,135 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // NOTFICATION
+
   // REGISTER
 
-  const btnSignUp = document.querySelector(".btn__signup"),
-    btnLogIn = document.querySelector(".btn_login"),
-    modal = document.querySelector(".modal"),
-    closeSignUp = document.querySelector(".close_modal_sign_up"),
-    closeLogIn = document.querySelector(".close_modal_log_in"),
-    signUp = document.querySelector(".sign_up"),
-    logIn = document.querySelector(".log_in"),
-    sbtSign = document.querySelector(".submit_sign"),
-    sbtLog = document.querySelector(".submit_log"),
-    submitLogIn = document.querySelector(".log_in-btn"),
-    submitSignUp = document.querySelector(".sign_up-btn"),
-    name = document.querySelector("#name"),
-    phone = document.querySelector("#phone"),
-    email = document.querySelector("#email"),
-    password = document.querySelector("#password"),
-    input = document.querySelectorAll("input"),
-    form = document.querySelector("form");
+  // const btnSignUp = document.querySelector(".btn__signup"),
+  //   btnLogIn = document.querySelector(".btn_login"),
+  //   modal = document.querySelector(".modal"),
+  //   closeSignUp = document.querySelector(".close_modal_sign_up"),
+  //   closeLogIn = document.querySelector(".close_modal_log_in"),
+  //   signUp = document.querySelector(".sign_up"),
+  //   logIn = document.querySelector(".log_in"),
+  //   submitLogIn = document.querySelector(".log_in-btn"),
+  //   submitSignUp = document.querySelector(".sign_up-btn");
 
-  hideCont(modal, "flex_d");
-  hideCont(signUp, "flex_d");
-  hideCont(logIn, "flex_d");
+  // hideCont(modal, "flex_d");
+  // hideCont(signUp, "flex_d");
+  // hideCont(logIn, "flex_d");
 
-  btnSignUp.addEventListener("click", (e) => {
-    e.preventDefault();
+  // btnSignUp.addEventListener("click", (e) => {
+  //   e.preventDefault();
 
-    showCont(modal, "flex_d");
-    showCont(signUp, "flex_d");
+  //   showCont(modal, "flex_d");
+  //   showCont(signUp, "flex_d");
 
-    overflowHidden();
-  });
+  //   overflowHidden();
+  // });
 
-  btnLogIn.addEventListener("click", (e) => {
-    e.preventDefault();
+  // btnLogIn.addEventListener("click", (e) => {
+  //   e.preventDefault();
 
-    showCont(modal, "flex_d");
-    showCont(logIn, "flex_d");
+  //   showCont(modal, "flex_d");
+  //   showCont(logIn, "flex_d");
 
-    overflowHidden();
-  });
+  //   overflowHidden();
+  // });
 
-  closeSignUp.addEventListener("click", () => {
-    hideCont(modal, "flex_d");
-    hideCont(signUp, "flex_d");
+  // closeSignUp.addEventListener("click", () => {
+  //   hideCont(modal, "flex_d");
+  //   hideCont(signUp, "flex_d");
 
-    overflowNone();
-  });
+  //   overflowNone();
+  // });
 
-  modal.addEventListener("click", (e) => {
-    if (e.target == modal) {
-      hideCont(modal, "flex_d");
-      hideCont(signUp, "flex_d");
-      hideCont(logIn, "flex_d");
-      inputValueClear();
+  // modal.addEventListener("click", (e) => {
+  //   if (e.target == modal) {
+  //     hideCont(modal, "flex_d");
+  //     hideCont(signUp, "flex_d");
+  //     hideCont(logIn, "flex_d");
+  //     inputValueClear();
 
-      overflowNone();
-    }
-  });
+  //     overflowNone();
+  //   }
+  // });
 
-  submitLogIn.addEventListener("click", () => {
-    hideCont(signUp, "flex_d");
-    showCont(logIn, "flex_d");
-  });
+  // submitLogIn.addEventListener("click", () => {
+  //   hideCont(signUp, "flex_d");
+  //   showCont(logIn, "flex_d");
+  // });
 
-  submitSignUp.addEventListener("click", () => {
-    hideCont(logIn, "flex_d");
-    showCont(signUp, "flex_d");
-  });
+  // submitSignUp.addEventListener("click", () => {
+  //   hideCont(logIn, "flex_d");
+  //   showCont(signUp, "flex_d");
+  // });
 
-  closeLogIn.addEventListener("click", () => {
-    hideCont(modal, "flex_d");
-    hideCont(logIn, "flex_d");
-    overflowNone();
-  });
+  // closeLogIn.addEventListener("click", () => {
+  //   hideCont(modal, "flex_d");
+  //   hideCont(logIn, "flex_d");
+  //   overflowNone();
+  // });
 
-  function inputValueClear() {
-    name.value = "";
-    phone.value = "";
-    email.value = "";
-    password.value = "";
-  }
+  // const sbtSign = document.querySelector(".submit_sign"),
+  //   name = document.querySelector("#name"),
+  //   phone = document.querySelector("#phone"),
+  //   email = document.querySelector("#email"),
+  //   password = document.querySelector("#password");
 
-  const user = {
-    name: "",
-    phone: "",
-    email: "",
-    password: "",
-  };
+  // function inputValueClear() {
+  //   name.value = "";
+  //   phone.value = "";
+  //   email.value = "";
+  //   password.value = "";
+  // }
 
-  sbtSign.addEventListener("click", (e) => {
-    if (
-      name.value !== "" &&
-      name.value != Number(name.value) &&
-      name.value.length > 3 &&
-      name.value.length < 25
-    ) {
-      if (
-        phone.value !== "" &&
-        phone.value == Number(phone.value) &&
-        phone.value.length > 5 &&
-        phone.value.length < 15
-      ) {
-        if (email.value !== "") {
-          console.log("email");
-          user.email = email.value;
-          
-          if (
-            password.value !== "" &&
-            password.value == Number(password.value) &&
-            password.value.length > 7 &&
-            password.value.length < 9
-          ) {
-            console.log("sucess");
-            user.password = password.value;
-            window.location.reload();
-          } else {
-            inputValueClear();
-          }
-        } else {
-          console.log("email");
-          inputValueClear();
-        }
-        user.phone = phone.value;
-      } else {
-        console.log("phone");
-        inputValueClear();
-      }
-      user.name = name.value;
-    } else {
-      console.log("name");
-      inputValueClear();
-    }
-
-    console.log(user);
-  });
-
+  // sbtSign.addEventListener("click", (e) => {
+  //   if (
+  //     name.value !== "" &&
+  //     name.value != Number(name.value) &&
+  //     name.value.length > 3 &&
+  //     name.value.length < 25
+  //   ) {
+  //     if (
+  //       phone.value !== "" &&
+  //       phone.value == Number(phone.value) &&
+  //       phone.value.length > 5 &&
+  //       phone.value.length < 15
+  //     ) {
+  //       if (email.value !== "") {
+  //         if (
+  //           password.value !== "" &&
+  //           password.value == Number(password.value) &&
+  //           password.value.length > 7 &&
+  //           password.value.length < 9
+  //         ) {
+  //           showNotfication(".success");
+  //           timeCloseNotfication(".success");
+  //           setTimeout(() => {
+  //             window.location.reload();
+  //           }, 1000);
+  //         } else {
+  //           showNotfication(".error");
+  //           timeCloseNotfication(".error");
+  //           inputValueClear();
+  //         }
+  //       } else {
+  //         showNotfication(".error");
+  //         timeCloseNotfication(".error");
+  //         inputValueClear();
+  //       }
+  //     } else {
+  //       showNotfication(".error");
+  //       timeCloseNotfication(".error");
+  //       inputValueClear();
+  //     }
+  //   } else {
+  //     timeCloseNotfication();
+  //     showNotfication(".error");
+  //     timeCloseNotfication(".error");
+  //     inputValueClear();
+  //   }
+  // });
   // my portfolio website
 });

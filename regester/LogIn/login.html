@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration & Log In</title>
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="../../css/style.css">
+  </head>
+  <body>
+    <!-- log in start -->
+    <div class="modal">
+      <form>
+        <input type="text" placeholder="Enter your email" id="email_log" />
+        <input type="text" placeholder="Enter your phone" id="phone_log" />
+        <input
+        type="password"
+        placeholder="Enter your password"
+        id="passwod_log"
+        />
+
+        <a href="#" class="sign_in_google"
+          ><img src="../../icons/google-symbol.png" alt="google-symbol" /> sign in
+          with google</a
+        >
+
+        <div class="sign_up-btn">
+          <a href="../SignUp/signup.html" target="_blank">
+            <span class="sign_up_submit">Sign Up</span>
+          </a>
+        </div>
+
+        <button class="submit_log" type="button">Log In</button>
+      </form>
+    </div>
+    <!-- Log in end -->
+    <script src="./login.js" ></script>
+  </body>
+  </html>
