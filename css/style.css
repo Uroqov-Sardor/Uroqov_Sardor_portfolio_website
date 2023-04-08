@@ -28,6 +28,59 @@
 body {
   position: relative;
 }
+/* Loader style start */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  z-index: 10000;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  animation: anim 0.5s infinite linear;
+}
+@keyframes anim {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.load::after {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  border-radius: 50%;
+}
+.circle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  border-radius: 50%;
+}
+/* Loader style end */
 
 /* Header section style start */
 .home {
@@ -176,25 +229,12 @@ body {
   transform: translateY(0);
   animation: textAuto 3s linear infinite alternate;
 }
-/* .brief_bg::after {
-  position: absolute;
-  content: "";
-  left: 0;
-  width: 100%;
-  height: 200%;
-  background: rgb(117, 6, 243);
-  border-left: 2px solid rgb(149, 72, 238);
-  animation: textAuto 2s linear infinite alternate;
-} */
 
 @keyframes textAuto {
-  0% 
-  {
+  0% {
     transform: translateY(0);
-
-  } 
-  100%
-  {
+  }
+  100% {
     transform: translateY(-220px);
   }
 }
@@ -259,12 +299,10 @@ body {
   animation: topAnimate 2s linear infinite;
 }
 @keyframes topAnimate {
-  0%
-  {
+  0% {
     transform: translateY(0px);
   }
-  100%
-  {
+  100% {
     transform: translateY(-45px);
   }
 }
@@ -601,7 +639,7 @@ footer {
   flex-direction: row;
   position: relative;
 }
-.contact_me .contact{
+.contact_me .contact {
   width: 60px;
   height: 60px;
   background: #000;
@@ -613,7 +651,7 @@ footer {
 .contact_me .contact img {
   width: 100%;
   height: 100%;
-  filter:invert(1);
+  filter: invert(1);
   border-radius: 50%;
   transition: all 0.8s ease;
 }
@@ -715,8 +753,177 @@ footer {
   cursor: pointer;
 }
 .error {
-  background-color: #FA4414;
+  background-color: #fa4414;
 }
 /* Notfication style end */
 
 /* Sardor || Uroqov website responsive */
+
+@media (max-width: 970px) {
+  /* About me */
+  .about {
+    flex-direction: column;
+  }
+  .about__me {
+    margin: 10px;
+    width: 98%;
+  }
+  .me__siklis {
+    width: 98%;
+    margin: 10px;
+  }
+}
+@media (max-width: 860px) {
+  /* Header section */
+  .home__title h1 {
+    font-size: 2.6rem;
+  }
+  .brief_bg {
+    width: 245px;
+  }
+
+  /* About me */
+  .me__title p {
+    font-size: 1.8rem;
+  }
+  .me__title h2 {
+    font-size: 2.6rem;
+  }
+  .me__title h4 {
+    font-size: 1.6rem;
+  }
+  .brief__about_me {
+    margin-top: 5px;
+    padding: 1px;
+  }
+  .information__about_me {
+    top: 40px;
+    font-size: 1.8em;
+  }
+  .me__siklis h1 {
+    font-size: 1.8rem;
+  }
+  /* Portfolio */
+  .portfolio__title {
+    font-size: 2.4rem;
+  }
+  .portfolio__item {
+    width: 300px;
+  }
+}
+@media (max-width: 656px) {
+  .portfolio__item {
+    width: 500px;
+  }
+}
+
+@media (max-width: 512px) {
+  /* Header section */
+  .home__title h1 {
+    font-size: 1.8rem;
+  }
+  .brief_bg {
+    width: 170px;
+    height: 40px;
+  }
+  .btns {
+    margin-top: 36px;
+  }
+  .home__title img {
+    margin: 80% 0 -120% 0;
+    width: 160px;
+    height: 80px;
+  }
+  /* Navbar menu */
+  .nav-menu__lists .navbar-list {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  /* Header section */
+  .btns a {
+    font-size: 1rem;
+    margin: 0 0px;
+    padding: 8px 30px;
+  }
+
+  /* Navbar menu */
+  .navbar-menu__btn {
+    width: 38px;
+    height: 39px;
+    background-size: 34px 36px;
+  }
+
+  /* About me */
+  .about__me {
+    border-radius: 1.5%;
+  }
+  .me img {
+    display: none;
+  }
+  .me__title p,
+  .me__title h2,
+  .me__title h4 {
+    position: static;
+    text-align: center;
+  }
+  .me__title h2 {
+    font-size: 2.2rem;
+  }
+  .information__about_me {
+    top: -6px;
+    font-size: 1.4em;
+  }
+  .brief__text {
+    font-size: 0.95rem;
+  }
+  .siklis img {
+    width: 40px;
+    height: 40px;
+  }
+  .tskil {
+    width: 230px;
+  }
+
+  /* Portfolio */
+  .portfolio__title {
+    font-size: 2rem;
+  }
+  .item__btn {
+    font-size: 1.2rem;
+  }
+  .top {
+    width: 40px;
+    height: 55px;
+  }
+  .top img {
+    height: 20px;
+    width: 20px;
+  }
+  .top_title {
+    font-size: 1rem;
+  }
+
+  /* Footer section */
+  footer {
+    height: 20vh;
+  }
+  .contact_me .contact {
+    width: 35px;
+    height: 35px;
+  }
+  .footer_text {
+    font-size: 1rem;
+  }
+  .contact_this {
+    width: 249px;
+    height: 40px;
+  }
+  .contact_this img {
+    width: 35px;
+    height: 44px;
+  }
+  .cont_this {
+    font-size: 1em;
+  }
+}

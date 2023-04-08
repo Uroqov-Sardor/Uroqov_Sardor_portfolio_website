@@ -13,28 +13,27 @@ window.addEventListener("DOMContentLoaded", () => {
     element.classList.remove(`${display}`);
   }
 
+  
+
   function show(element, display) {
     element.classList.add(`${display}`, "fade");
     element.classList.remove("none_d");
   }
+
+  // LOADING
+  const load = document.querySelector(".loading");
+  overflowHidden();
+  setTimeout(() => {
+    overflowNone();
+    load.style.opacity = "0";
+    setTimeout(() => [(load.style.display = "none")], 1000);
+  }, 3000);
 
   // CONST VERABLE
   const btnMenuNav = document.querySelector(".navbar-menu__btn"),
     navMenu = document.querySelector(".nav-menu"),
     listMenuNav = document.querySelector(".nav-menu__lists"),
     navLists = document.querySelectorAll(".navbar-list");
-  // briefTextAuto = document.querySelector(".brief_bg");
-
-  // function briefAutoText() {
-  //   setInterval(() => {
-  //     briefTextAuto.textContent = "JavaScript";
-  //   }, 4000);
-  //   setInterval(() => {
-  //     briefTextAuto.textContent = "Front_End";
-  //   }, 8000);
-  // }
-
-  // briefAutoText();
 
   function btnMenuOpenNav() {
     btnMenuNav.classList.add("open");
@@ -45,14 +44,16 @@ window.addEventListener("DOMContentLoaded", () => {
   function btnMenuCloseNav() {
     btnMenuNav.classList.add("close");
     btnMenuNav.classList.remove("open");
-    navMenu.style.transform = "translate(0)";
+    navMenu.style.transform = "translate(0%)";
   }
 
   btnMenuNav.addEventListener("click", () => {
     if (btnMenuNav.classList.contains("open")) {
       btnMenuCloseNav();
+      overflowHidden();
     } else {
       btnMenuOpenNav();
+      overflowNone();
     }
   });
 
@@ -83,6 +84,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     btnMenuOpenNav();
+    overflowNone();
   });
 
   // TSkils
@@ -178,9 +180,6 @@ window.addEventListener("DOMContentLoaded", () => {
   // Scroll
 
   const top = document.querySelector(".top");
-  //   aboutMe = document.querySelector(".about__me"),
-  //   tskilContener = document.querySelector(".me__siklis"),
-  //   portfolioTitle = document.querySelector(".portfolio__title"),
   const footer = document.querySelector("footer");
 
   function topScroll() {
@@ -195,47 +194,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
   topScroll();
-  window.addEventListener("scroll", topScroll);
-
-  // function aboutScroll() {
-  //   if (window.pageYOffset + document.documentElement.clientHeight > 1000) {
-  //     siklis();
-
-  //     window.removeEventListener("scroll", aboutScroll);
-
-  //     show(aboutMe, "block_d");
-  //     show(tskilContener, "flex_d");
-  //   } else {
-  //     hide(aboutMe, "block_d");
-  //     hide(tskilContener, "flex_d");
-  //   }
-  // }
-
-  // function portfolioScroll() {
-  //   if (window.pageYOffset + document.documentElement.clientHeight > 1600) {
-  //     window.removeEventListener("scroll", portfolioScroll);
-
-  //     show(portfolioTitle, "block_d");
-  //     show(portfolioContainer, "block_d");
-  //   } else {
-  //     hide(portfolioTitle, "block_d");
-  //     hide(portfolioContainer, "block_d");
-  //   }
-  // }
-
-  // function footerScroll() {
-  //   if (window.pageYOffset + document.documentElement.clientHeight > 2000) {
-  //     window.removeEventListener("scroll", footerScroll);
-
-  //     show(footer, "flex_d");
-  //   } else {
-  //     hide(footer, "flex_d");
-  //   }
-  // }
-
-  // window.addEventListener("scroll", aboutScroll);
-  // window.addEventListener("scroll", portfolioScroll);
-  // window.addEventListener("scroll", footerScroll);
+  window.addEventListener("scroll", topScroll)
 
   // FOOTER
   const contactMe = document.querySelector(".contact_me"),
@@ -290,136 +249,4 @@ window.addEventListener("DOMContentLoaded", () => {
       contClear();
     }
   });
-
-  // NOTFICATION
-
-  // REGISTER
-
-  // const btnSignUp = document.querySelector(".btn__signup"),
-  //   btnLogIn = document.querySelector(".btn_login"),
-  //   modal = document.querySelector(".modal"),
-  //   closeSignUp = document.querySelector(".close_modal_sign_up"),
-  //   closeLogIn = document.querySelector(".close_modal_log_in"),
-  //   signUp = document.querySelector(".sign_up"),
-  //   logIn = document.querySelector(".log_in"),
-  //   submitLogIn = document.querySelector(".log_in-btn"),
-  //   submitSignUp = document.querySelector(".sign_up-btn");
-
-  // hideCont(modal, "flex_d");
-  // hideCont(signUp, "flex_d");
-  // hideCont(logIn, "flex_d");
-
-  // btnSignUp.addEventListener("click", (e) => {
-  //   e.preventDefault();
-
-  //   showCont(modal, "flex_d");
-  //   showCont(signUp, "flex_d");
-
-  //   overflowHidden();
-  // });
-
-  // btnLogIn.addEventListener("click", (e) => {
-  //   e.preventDefault();
-
-  //   showCont(modal, "flex_d");
-  //   showCont(logIn, "flex_d");
-
-  //   overflowHidden();
-  // });
-
-  // closeSignUp.addEventListener("click", () => {
-  //   hideCont(modal, "flex_d");
-  //   hideCont(signUp, "flex_d");
-
-  //   overflowNone();
-  // });
-
-  // modal.addEventListener("click", (e) => {
-  //   if (e.target == modal) {
-  //     hideCont(modal, "flex_d");
-  //     hideCont(signUp, "flex_d");
-  //     hideCont(logIn, "flex_d");
-  //     inputValueClear();
-
-  //     overflowNone();
-  //   }
-  // });
-
-  // submitLogIn.addEventListener("click", () => {
-  //   hideCont(signUp, "flex_d");
-  //   showCont(logIn, "flex_d");
-  // });
-
-  // submitSignUp.addEventListener("click", () => {
-  //   hideCont(logIn, "flex_d");
-  //   showCont(signUp, "flex_d");
-  // });
-
-  // closeLogIn.addEventListener("click", () => {
-  //   hideCont(modal, "flex_d");
-  //   hideCont(logIn, "flex_d");
-  //   overflowNone();
-  // });
-
-  // const sbtSign = document.querySelector(".submit_sign"),
-  //   name = document.querySelector("#name"),
-  //   phone = document.querySelector("#phone"),
-  //   email = document.querySelector("#email"),
-  //   password = document.querySelector("#password");
-
-  // function inputValueClear() {
-  //   name.value = "";
-  //   phone.value = "";
-  //   email.value = "";
-  //   password.value = "";
-  // }
-
-  // sbtSign.addEventListener("click", (e) => {
-  //   if (
-  //     name.value !== "" &&
-  //     name.value != Number(name.value) &&
-  //     name.value.length > 3 &&
-  //     name.value.length < 25
-  //   ) {
-  //     if (
-  //       phone.value !== "" &&
-  //       phone.value == Number(phone.value) &&
-  //       phone.value.length > 5 &&
-  //       phone.value.length < 15
-  //     ) {
-  //       if (email.value !== "") {
-  //         if (
-  //           password.value !== "" &&
-  //           password.value == Number(password.value) &&
-  //           password.value.length > 7 &&
-  //           password.value.length < 9
-  //         ) {
-  //           showNotfication(".success");
-  //           timeCloseNotfication(".success");
-  //           setTimeout(() => {
-  //             window.location.reload();
-  //           }, 1000);
-  //         } else {
-  //           showNotfication(".error");
-  //           timeCloseNotfication(".error");
-  //           inputValueClear();
-  //         }
-  //       } else {
-  //         showNotfication(".error");
-  //         timeCloseNotfication(".error");
-  //         inputValueClear();
-  //       }
-  //     } else {
-  //       showNotfication(".error");
-  //       timeCloseNotfication(".error");
-  //       inputValueClear();
-  //     }
-  //   } else {
-  //     timeCloseNotfication();
-  //     showNotfication(".error");
-  //     timeCloseNotfication(".error");
-  //     inputValueClear();
-  //   }
-  // });
-  // my portfolio website
 });

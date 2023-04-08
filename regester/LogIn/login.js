@@ -94,7 +94,9 @@ window.addEventListener("DOMContentLoaded", () => {
     hideNotfication(".error");
   });
 
-  const user = JSON.parse(localStorage.getItem("user"));
+  let user = "";
+
+  user = JSON.parse(localStorage.getItem("user"));
 
   // LOGIN REGISTRATION
   const emailLog = document.querySelector("#email_log"),
@@ -136,24 +138,30 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function logInCheck() {
-    if (emailLog.value !== "" && emailLog.value === user.email) {
-      if (
-        phoneLog.value !== "" &&
-        phoneLog.value == Number(phoneLog.value) &&
-        phoneLog.value.length > 5 &&
-        phoneLog.value.length < 15 &&
-        phoneLog.value === user.phone
-      ) {
+    try {
+      if (emailLog.value !== "" && emailLog.value === user.email) {
         if (
-          passwordLog.value !== "" &&
-          passwordLog.value == Number(passwordLog.value) &&
-          passwordLog.value.length > 7 &&
-          passwordLog.value.length < 9 &&
-          passwordLog.value === user.password
+          phoneLog.value !== "" &&
+          phoneLog.value == Number(phoneLog.value) &&
+          phoneLog.value.length > 5 &&
+          phoneLog.value.length < 15 &&
+          phoneLog.value === user.phone
         ) {
-          showNotfication(".success");
-          redirect();
-          localStorage.removeItem("user");
+          if (
+            passwordLog.value !== "" &&
+            passwordLog.value == Number(passwordLog.value) &&
+            passwordLog.value.length > 7 &&
+            passwordLog.value.length < 9 &&
+            passwordLog.value === user.password
+          ) {
+            showNotfication(".success");
+            redirect();
+            localStorage.removeItem("user");
+          } else {
+            showNotfication(".error");
+            timeCloseNotfication(".error");
+            inputValueClear();
+          }
         } else {
           showNotfication(".error");
           timeCloseNotfication(".error");
@@ -164,12 +172,13 @@ window.addEventListener("DOMContentLoaded", () => {
         timeCloseNotfication(".error");
         inputValueClear();
       }
-    } else {
+    } catch (err) {
+      console.log(err);
       showNotfication(".error");
       timeCloseNotfication(".error");
       inputValueClear();
     }
-  }
+    }
 
   subLog.addEventListener("click", () => {
     logInCheck();

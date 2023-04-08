@@ -5,16 +5,20 @@
   "description": "\"Portfolio website\"",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node script.js",
+    "dev": "nodemon script.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sardordev20/Uroqov_Sardor_portfolio_website.git"
   },
-  "author": "\"Uroqov Sardor\"",
+  "author": "Uroqov Sardor",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sardordev20/Uroqov_Sardor_portfolio_website/issues"
   },
-  "homepage": "https://github.com/sardordev20/Uroqov_Sardor_portfolio_website#readme"
+  "homepage": "https://github.com/sardordev20/Uroqov_Sardor_portfolio_website#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
